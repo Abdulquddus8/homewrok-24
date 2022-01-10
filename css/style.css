@@ -1,0 +1,355 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(26, 26, 26, 0.856);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  perspective: 500px; 
+}
+/* Homework 1-part start*/
+.social-cubes{
+  width: 900px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  margin-bottom: 100px;
+}
+.main-cube{
+  transform: rotate3d(0deg,0deg,0deg);
+  position: relative;
+  width: 300px;
+  height: 300px;
+  transform-style:preserve-3d;
+}
+.cube-window{
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  line-height: 300px;
+  text-align: center;
+  font-weight: 700;
+  transform-style:preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cube-front{
+  transform: translate3d(0px,0px,150px);
+}
+.cube-back{
+  transform: translate3d(0px,0px,-150px) rotateY(180deg);
+}
+.cube-top{
+  transform: translate3d(0px,-150px,0px) rotateX(90deg);
+}
+.cube-bottom{
+  transform: translate3d(0px,150px,0px) rotateX(-90deg);
+}
+.cube-left{
+  transform: translate3d(-150px,0px,0px) rotateY(-90deg);
+}
+.cube-right{
+  transform: translate3d(150px,0px,0px) rotateY(90deg);
+}
+.main-cube:hover{
+  animation: myHover 1s 1 linear both;
+  z-index: 1;
+}
+@keyframes myHover {
+  0% {
+      transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  
+  50% {
+      transform: rotateX(-180px) rotateY(360px) rotateZ(720px);
+  }
+  
+  100% {
+       transform:rotateX(0deg) rotateY(-180deg) rotateZ(-360deg);
+  }
+}
+.bx{
+  font-size: 150px;
+  color: #767676;
+}
+.youtube-back{
+  background-color: #fe0000;
+  color: #fff;
+}
+.twitter-back{
+  background-color: #0184BC;
+  color: #fff;
+}
+.facebook-back{
+  background-color: #3B599F;
+  color: #fff;
+}
+/* Homework 1-part finish*/
+.other-projects{
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  padding-top: 10px;
+  width: 400px;
+  display: flex;
+}
+.btn{
+  padding: 10px;
+  background-color: blanchedalmond;
+  display: inline-block;
+  text-decoration: none;
+  border: 3px solid #000;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  color: #000;
+  font-size: 25px;
+}
+.btn:hover{
+  background-image: linear-gradient(to right,#ffe6bf,#f0ac47);
+}
+.btn:not(:last-child){
+  margin-right: 10px;
+}
+.social-animation{
+  text-align: center;
+  color: #fff;
+}
+.bxs-right-arrow-circle{
+  margin-left: 5px;
+  font-size:30px;
+  color: #f8cd8c;
+}
+/* water animation style start */
+.water-cube{
+  margin-top: 50px;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(
+    341deg) rotateY(
+    40deg) rotateZ(
+    359deg);
+  transform-style: preserve-3d;
+  animation: all 2s ease;
+}
+/* .water-cube:hover{
+  animation: water-anime 3s linear infinite alternate;
+} */
+.water-wall{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 302px;
+  height: 302px;
+  background-color: #464646c5;
+  transform-style: preserve-3d;
+  border: 1px solid rgba(73, 73, 73, 0.541);
+  animation: water-anime 1.5s steps(24)  infinite;
+}
+.water-bottom{
+  animation: water-anime-bottom;
+}
+.water-top{
+  animation: water-anime-top;
+}
+@keyframes water-anime {
+  0%{
+    background: linear-gradient(#464646c5);
+  }
+  10%{
+    background: linear-gradient(to bottom,#2331428a 95%, #56fa98 95%);
+  }
+  20%{
+    background: linear-gradient(to bottom,#2331428a 85%, #56fa98 85%);
+  }
+  30%{
+    background: linear-gradient(to bottom,#2331428a 75%, #56fa98 75%);
+  }
+  40%{
+    background: linear-gradient(to bottom,#2331428a 65%, #56fa98 65%);
+  }
+  50%{
+    background: linear-gradient(to bottom,#2331428a 55%, #56fa98 55%);
+  }
+  60%{
+    background: linear-gradient(to bottom,#2331428a 45%, #56fa98 45%);
+  }
+  70%{
+    background: linear-gradient(to bottom,#2331428a 35%, #56fa98 35%);
+  }
+  80%{
+    background: linear-gradient(to bottom,#2331428a 25%, #56fa98 25%);
+  }
+  90%{
+    background: linear-gradient(to bottom,#2331428a 15%, #56fa98 15%);
+  }
+  100%{
+    background: linear-gradient(to bottom,#2331428a 5%, #56fa98 5%);
+  }
+}
+.water-bottom{  
+  background-color: #56fa98;
+}
+/* water animation style finish */
+
+/* vifi animation atyle start */
+
+.vifi-box{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-45deg);
+  border-top-right-radius: 100%;
+}
+.vifi-1{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  border-top-right-radius: 100%;
+  background-color: #fff;
+  z-index: 10;
+}
+.vifi-2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background-color: #3B3B3B;
+    border-top-right-radius: 100%;
+    z-index: 9;
+}
+.vifi-3{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  border-top-right-radius: 100%;
+  z-index: 8;
+  opacity: 0;
+  animation: vifi-first 3s linear  infinite alternate;
+}
+@keyframes vifi-first {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.7;
+  }
+}
+.vifi-4{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  height: 250px;
+  background-color: #3b3b3b;
+  border-top-right-radius: 100%;
+  z-index: 7;
+}
+.vifi-5{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-top-right-radius: 100%;
+  z-index: 6;
+  opacity: 0;
+  animation: vifi-second 3s linear  infinite alternate;
+  animation-delay: 1s;
+}
+@keyframes vifi-second {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0.8;
+  }
+}
+.vifi-6{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  background-color: #3b3b3b;
+  border-top-right-radius: 100%;
+  z-index: 5;
+}
+.vifi-7{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  background-color: #fff;
+  border-top-right-radius: 100%;
+  z-index: 4;
+  opacity: 0;
+  animation: vifi-three 3s linear  infinite alternate;
+  animation-delay: 2s;
+}
+@keyframes vifi-three {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.vifi-8{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  background-color: #3b3b3b;
+  border-top-right-radius: 100%;
+  z-index: 3;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* vifi animation atyle start */
